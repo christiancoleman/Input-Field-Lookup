@@ -54,7 +54,7 @@ public with Sharing class lookupfieldController {
             sQuery += ' (' + likeField.removeStart(' OR ') + ') ';
         }
         
-        if (Filter != null) {
+        if (String.isNotBlank(Filter) || String.isNotEmpty(Filter)) {
             sQuery += ' AND (' + Filter + ')';
         }
         
