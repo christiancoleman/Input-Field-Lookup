@@ -1,3 +1,14 @@
+This is an updated version of (https://github.com/Chaos-Tech-Corp/Input-Field-Lookup)
+
+I've updated the file names and folder deployment to be inline with an actual deployment.
+
+Also, some features added:
+
+* customPlaceholder
+* recordTypeName
+
+___
+
 [![Deploy](https://deploy2.org/dist/deploy2org.svg)](https://deploy2.org/deploy)
 
 # Input Field Lookup
@@ -7,16 +18,16 @@ This component creates a lookup field similar to the generic Salesforce Lookup f
 It automatically loads the object icon and allows to create a new record similar the native component (it won't navigate away and will select it after creation).
 
 Default state:
-![default](static/lookup_default.png?raw=true)
+![default](examples/lookup_default.png?raw=true)
 
 Focused, showing recent items:
-![focused](static/lookup_focused.png?raw=true)
+![focused](examples/lookup_focused.png?raw=true)
 
 Record Selected:
-![selected](static/lookup_selected.png?raw=true)
+![selected](examples/lookup_selected.png?raw=true)
 
 Record Selected and Disabled:
-![disabled](static/lookup_selected_disabled.png?raw=true)
+![disabled](examples/lookup_selected_disabled.png?raw=true)
 
 
 

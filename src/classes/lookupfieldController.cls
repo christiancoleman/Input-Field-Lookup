@@ -1,4 +1,5 @@
-public with Sharing class lookupfieldController {    
+public with Sharing class lookupfieldController {
+
     @AuraEnabled
     public static List<sObject> GetRecentRecords(String ObjectName, List<String> ReturnFields, Integer MaxResults) {
         

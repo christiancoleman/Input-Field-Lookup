@@ -17,6 +17,8 @@
     <aura:attribute name="required" type="Boolean" default="false" />
     <aura:attribute name="showError" type="Boolean" default="false" />
     <aura:attribute name="errorMessage" type="String" default="" />
+    <aura:attribute name="customPlaceholder" type="String" />
+    <aura:attribute name="recordTypeName" type="String" />
     
     <aura:attribute name="selectedId" type="String" />
     <aura:attribute name="selectedName" type="String" />
@@ -71,16 +73,30 @@
                                     </span>
                                 </aura:if>
                                 
-                                <ui:inputText aura:id="lookup-field"
+                                <aura:if isTrue="{!v.customPlaceholder != null}">
+                                    <ui:inputText aura:id="lookup-field"
                                               class="slds-input slds-combobox__input slds-input-has-icon_left" 
                                               updateOn="keyup"
                                               value="{!v.searchText}"
                                               keyup="{!c.onKeyUp}"
-                                              placeholder="{!'Search ' + v.objectLabelPlural + '...'}"
+                                              placeholder="{!v.customPlaceholder}"
                                               blur="{!c.onBlur}"
                                               focus="{!c.onFocus}"
                                               disabled = "{!v.disabled}"
                                               />
+                                    <aura:set attribute="else">
+                                        <ui:inputText aura:id="lookup-field"
+                                                class="slds-input slds-combobox__input slds-input-has-icon_left" 
+                                                updateOn="keyup"
+                                                value="{!v.searchText}"
+                                                keyup="{!c.onKeyUp}"
+                                                placeholder="{!'Search ' + v.objectLabelPlural + '...'}"
+                                                blur="{!c.onBlur}"
+                                                focus="{!c.onFocus}"
+                                                disabled = "{!v.disabled}"
+                                                />
+                                    </aura:set>
+                                </aura:if>
                                 
                                 <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
                                     <lightning:icon class="slds-icon slds-icon_x-small slds-icon-text-default" iconName="utility:search" size="x-small" alternativeText="icon"/>
